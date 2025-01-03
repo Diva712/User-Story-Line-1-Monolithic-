@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const salesTargetSchema = new mongoose.Schema({
   salesRepresentative: {
-    type: mongoose.Schema.Type.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'SalesRepresentative',
     required: true,
   },
