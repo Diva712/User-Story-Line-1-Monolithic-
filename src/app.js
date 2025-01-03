@@ -12,4 +12,16 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded())
 
+
+//routes import
+import salesRepresentativeRoutes from "./routes/salesRepresentative.router.js"
+import customerRoutes from "./routes/customer.router.js"
+
+
+
+//routes declaration
+app.use("/api/v1/sales-representative", salesRepresentativeRoutes);
+app.use("/api/v1/customer", customerRoutes);
+
+
 export default app

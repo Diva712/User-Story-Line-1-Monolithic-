@@ -24,12 +24,16 @@ const createSalesRepresentative = asyncHandler(async (req, res) => {
     password
   });
 
-  const savedSalesRep = await salesRep.save();
+  const SalesRep = await salesRep.save();
 
-  if (!savedSalesRep) {
+  if (!SalesRep) {
     throw new ApiError(404,
       "Error during the created Task in Db");
   }
+
+  const savedSalesRep = await SalesRepresentative.findOne(SalesRep._id).select(
+    "-password"
+  )
 
   return res.status(201).json(
     new ApiResponse(201, savedSalesRep, "Sales Representative creater !!")

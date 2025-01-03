@@ -15,7 +15,7 @@ const customerSchema = new mongoose.Schema(
       type: String
     },
     salesRepresentative: {
-      type: mongoose.Schema.Type.ObjecId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'SalesRepresentative',
       required: true,
     }
